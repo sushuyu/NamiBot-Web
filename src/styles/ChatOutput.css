@@ -11,3 +11,11 @@
 .ml-2 {
   margin-left: 10px;
 }
+
+.custom-bg-1 {
+  background-color: rgba(15, 17, 31, 0.6) !important;
+}
+
+.custom-bg-2 {
+  background-color: rgba(53, 81, 109, 0.6) !important;
+}

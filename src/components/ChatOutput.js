@@ -10,18 +10,13 @@ const ChatOutput = ({ messages }) => {
 
           {msg.user === 'Bot' && (
             <div className="d-flex align-items-start">
-              <img src={outputImg} alt="Bot" className="bot-image" />
-              <div className={`p-2 rounded ${msg.user === 'You' ? 'bg-primary text-white' : 'bg-secondary text-white'} ml-2`}>
-                <span>{msg.text}</span>
-              </div>
+              <img src={outputImg} alt="Bot Avatar" className="bot-image" />
             </div>
           )}
 
-          {msg.user === 'You' && (
-            <div className={`p-2 rounded ${msg.user === 'You' ? 'bg-primary text-white' : 'bg-secondary text-white'}`}>
-              <span>{msg.text}</span>
-            </div>
-          )}
+          <div id='user-bubble' className={`p-2 rounded ${msg.user === 'You' ? 'custom-bg-1 text-white' : 'custom-bg-2 text-white'} ${msg.user === 'Bot' ? 'ml-2' : ''}`}>
+            <span>{msg.text}</span>
+          </div>
         </div>
       ))}
     </div>

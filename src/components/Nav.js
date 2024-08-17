@@ -10,14 +10,14 @@ const NavBar = () => {
     <nav className='d-flex justify-content-between align-items-center'>
       <NavLink to="/" style={{ textDecoration: 'none' }}><h2>NamiBot</h2></NavLink>
 
-      <ul class="nav mb-2 ">
-        <li class="nav-item">
+      <ul className="nav mb-2 ">
+        <li className="nav-item">
           <NavLink to="/documentation"><FaBookOpen />
           </NavLink>
         </li>
-        <li class="nav-item">
-          <NavLink to="/documentation"><FaGithub />
-          </NavLink>
+        <li className="nav-item">
+          <a href='https://github.com/MiaaaV/NamiBot-Web' target='_blank' noopener="false" noreferrer="false"><FaGithub />
+          </a>
         </li>
         <li>
           <NavLink to="/privacy"><FaLock />
