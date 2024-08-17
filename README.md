@@ -24,7 +24,7 @@ Server Status Checks: Check the current server status for a specific region usin
 !status <region>: Checks the current server status.
     Example: !statusNA or !statusEUW
 
-### Project Structure
+## Project Structure
 
 App.js: The main entry point of the React application, featuring a background video and routing for different pages.
 Components:
