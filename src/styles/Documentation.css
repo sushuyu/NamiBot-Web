@@ -1,0 +1,26 @@
+#documentation {
+  gap: 1rem;
+}
+
+.features {
+  background-color: #06151a93;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+
+li code {
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.411);
+}
+
+.apis {
+  border: 1px solid #23789793;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+
+#api-link {
+  text-decoration: none;
+}

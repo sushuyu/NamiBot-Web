@@ -1,0 +1,34 @@
+.card {
+  background-color: #0c293193 !important;
+  color: white !important;
+  padding: 2rem 4rem;
+}
+
+button {
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px !important;
+  transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out;
+}
+
+#code-btn-1 {
+  background-color: rgba(0, 0, 0, 0.411);
+  border: 1px solid rgb(49, 145, 255);
+}
+
+#code-btn-1:hover {
+  background-color: rgba(49, 145, 255, 0.1);
+}
+
+#code-btn-2 {
+  background-color: rgba(0, 0, 0, 0.411);
+  border: 1px solid rgb(136, 255, 165);
+}
+
+#code-btn-2:hover {
+  background-color: rgba(136, 255, 165, 0.1);
+}
+
+code {
+  color: rgb(255, 110, 134) !important;
+}

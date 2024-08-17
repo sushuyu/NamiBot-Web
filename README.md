@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nami Bot is a custom Discord bot designed exclusively for the r/lol Discord server. This bot provides functionalities related to Clash tournament schedules and server status updates by interacting with the Riot Games API. The website serves as a demo and documentation hub for the Nami Bot, showcasing its features and providing relevant information. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Clash Tournament Schedules: Retrieve the latest Clash tournament schedules for specific regions using the !clash <region> command.
 
-### `npm start`
+Server Status Checks: Check the current server status for a specific region using the !status <region> command.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Available Regions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- NA (North America)
+- EUW (Europe West)
+- EUNE (Europe Nordic & East)
+- OCE (Oceania)
 
-### `npm test`
+## Usage
+### Commands
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+!clash <region>: Retrieves the latest Clash tournament schedules.
+    Example: !clashNA or !clashEUW
 
-### `npm run build`
+!status <region>: Checks the current server status.
+    Example: !statusNA or !statusEUW
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+App.js: The main entry point of the React application, featuring a background video and routing for different pages.
+Components:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ChatWindow: Interactive window where users can input commands and view bot responses. Includes 2 other components: ChatInput & ChatOutput.
 
-### `npm run eject`
+  Layout: Determines which main nav component is currently visible.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  Nav: Navigation of the project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  Documentation: Page providing detailed information about the bot's commands, usage, and APIs.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  Privacy: Page outlining the privacy practices of the bot and the website.

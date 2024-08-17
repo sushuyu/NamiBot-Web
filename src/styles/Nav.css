@@ -1,0 +1,18 @@
+nav h2 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav {
+  gap: 1rem;
+}
+
+svg {
+  color: rgba(255, 255, 255, 0.5);
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: color 0.2s ease-in-out, transform 0.15s ease-in-out;
+}
+
+svg:hover {
+  color: white;
+}
