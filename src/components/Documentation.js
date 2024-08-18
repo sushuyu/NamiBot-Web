@@ -16,7 +16,7 @@ const Documentation = () => {
         </section>
 
         <section className="features">
-          <h4>Features</h4>
+          <h4>Commands</h4>
           <p>Nami Bot uses two main commands which are case-insensitive:</p>
           <ul>
             <li>

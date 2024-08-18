@@ -1,24 +1,95 @@
+import './FormatAPI.css';
+
 const formatAPI = (data) => {
-  if (!data || !data.status) return 'Invalid response from server';
-
-  const { name, locales, maintenances } = data.status;
-  let formattedMessage = `Region: ${name}\nLocales Supported: ${locales.join(', ')}\n\n`;
-
-  if (maintenances && maintenances.length > 0) {
-    maintenances.forEach((maintenance, index) => {
-      formattedMessage += `Maintenance ${index + 1}:\n`;
-      formattedMessage += `  - ID: ${maintenance.id}\n`;
-      formattedMessage += `  - Created At: ${new Date(maintenance.created_at).toLocaleString()}\n`;
-      maintenance.titles.forEach((title) => {
-        formattedMessage += `  - ${title.locale}: ${title.content}\n`;
-      });
-      formattedMessage += `\n`;
-    });
-  } else {
-    formattedMessage += 'No maintenances currently scheduled.\n';
+  if (!data || !data.id || !data.name || !data.maintenances) {
+    return 'Invalid response from server';
   }
 
-  return formattedMessage;
+  const { name, maintenances } = data;
+  let maintenanceMsg = "";
+  let updateMsg = "";
+  let maintenanceDate = "";
+  let maintenanceTime = "";
+  let maintenanceContent = "";
+  let updateDate = "";
+  let updateTime = "";
+  let updateContent = "";
+
+  // MAINTENANCE
+  if (Object.keys(maintenances).length > 0) {
+    Object.values(maintenances).forEach((maintenance, index) => {
+      const createdAt = new Date(maintenance.created_at);
+      const formatDate = createdAt.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+      const formatTime = createdAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+      maintenanceDate += `${formatDate}\n`;
+      maintenanceTime += `${formatTime}\n`;
+
+      if (maintenance.titles && Object.keys(maintenance.titles).length > 0) {
+        Object.values(maintenance.titles).forEach((title) => {
+          maintenanceContent += `\n${title.content}\n`;
+        });
+      }
+
+      if (maintenance.updates && Object.keys(maintenance.updates).length > 0) {
+        Object.values(maintenance.updates).forEach((update) => {
+          const updatedAt = new Date(update.created_at);
+          const formatDate2 = updatedAt.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+          const formatTime2 = updatedAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+          updateDate += `${formatDate2}\n`;
+          updateTime += `${formatTime2}\n`;
+
+          if (update.translations && Object.keys(update.translations).length > 0) {
+            Object.values(update.translations).forEach((translation) => {
+              updateContent += `${translation.content}\n`;
+            });
+          }
+        });
+      }
+    });
+
+  } else {
+    maintenanceMsg += `No maintenance info available.\n`;
+    updateMsg += `No updates available.\n`;
+  }
+
+
+  return (
+    <div id="server-status">
+      <div className='d-flex flex-column'>
+        <div className='d-flex justify-content-end'>
+        </div>
+        <h5>{name} ({data.id}) - Server Status</h5>
+      </div>
+
+      <div id='maintenance'>
+        <div className='mb-2'>
+          <strong>Maintenances</strong>
+        </div>
+        <div className='d-flex flex-column'>
+          <div>
+            <small>{maintenanceDate} {maintenanceTime}</small>
+          </div>
+          {maintenanceContent}
+        </div>
+        {maintenanceMsg}
+      </div>
+
+      <div id='updates'>
+        <div className='mb-2'>
+          <strong>Updates</strong>
+        </div>
+        <div className='d-flex flex-column'>
+          <div>
+            <small>{updateDate} {updateTime}</small>
+          </div>
+          {updateContent}
+        </div>
+        {updateMsg}
+      </div>
+    </div>
+  );
 };
 
 export default formatAPI;
