@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Documentation from './components/Documentation';
 import Privacy from './components/Privacy';
 import Home from './components/Home';
+import Screenshots from './components/Screenshots';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="documentation" element={<Documentation />} />
           <Route path="privacy" element={<Privacy />} />
+          <Route path="screenshots" element={<Screenshots />} />
         </Route>
       </Routes>
     </Router>

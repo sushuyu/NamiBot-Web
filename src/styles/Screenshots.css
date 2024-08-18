@@ -1,0 +1,9 @@
+.ss-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: auto;
+}
+
+#ss-img {
+  max-width: 100%;
+}
