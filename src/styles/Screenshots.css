@@ -1,9 +1,47 @@
-.ss-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: auto;
+#ss-img {
+  width: 100%;
+  height: auto;
 }
 
-#ss-img {
-  max-width: 100%;
+.original-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.original-layout > div:nth-child(3) {
+  display: flex;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.arrow-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.arrow-buttons button {
+  background-color: rgba(49, 145, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.arrow-buttons button:hover {
+  background-color: rgba(141, 194, 255, 0.2);
+}
+
+#Fa-arr {
+  color: white;
+}
+
+.new-images {
+  display: flex;
+}
+
+.new-images div {
+  display: flex;
 }

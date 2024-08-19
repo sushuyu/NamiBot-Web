@@ -124,7 +124,6 @@ const ChatWindow = () => {
           </button>
         </h4>
 
-        <small><i>all regions: NA, EUW, EUNE, OCE</i></small>
         <small><i><code style={{ fontSize: '0.9rem' }}>!statusdebug</code> and <code style={{ fontSize: '0.9rem' }}>!clashdebug</code> will simulate real API responses if there are none</i></small>
 
         <div className='flex w-100 mt-5'>

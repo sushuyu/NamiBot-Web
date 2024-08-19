@@ -16,7 +16,7 @@ const ChatInput = ({ onSend }) => {
       <input
         type="text"
         className="form-control me-2"
-        placeholder="Type your message..."
+        placeholder="Type your command..."
         value={message}
         style={{ backgroundColor: '#ffffffb2' }}
         onChange={(e) => setMessage(e.target.value)}
