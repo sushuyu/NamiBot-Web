@@ -1,11 +1,12 @@
-import './FormatAPI.css';
+import './Format.css';
 
 const formatAPI = (data) => {
   if (!data || !data.id || !data.name || !data.maintenances) {
-    return 'Invalid response from server';
+    return 'Invalid response from server (status)';
   }
 
   const { name, maintenances } = data;
+
   let maintenanceMsg = "";
   let updateMsg = "";
   let maintenanceDate = "";
@@ -15,9 +16,8 @@ const formatAPI = (data) => {
   let updateTime = "";
   let updateContent = "";
 
-  // MAINTENANCE
   if (Object.keys(maintenances).length > 0) {
-    Object.values(maintenances).forEach((maintenance, index) => {
+    Object.values(maintenances).forEach((maintenance) => {
       const createdAt = new Date(maintenance.created_at);
       const formatDate = createdAt.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
       const formatTime = createdAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
@@ -58,7 +58,7 @@ const formatAPI = (data) => {
   return (
     <div id="server-status">
       <div className='d-flex flex-column'>
-        <div className='d-flex justify-content-end'>
+        <div>
         </div>
         <h5>{name} ({data.id}) - Server Status</h5>
       </div>
@@ -72,8 +72,8 @@ const formatAPI = (data) => {
             <small>{maintenanceDate} {maintenanceTime}</small>
           </div>
           {maintenanceContent}
+          {maintenanceMsg}
         </div>
-        {maintenanceMsg}
       </div>
 
       <div id='updates'>
@@ -85,8 +85,8 @@ const formatAPI = (data) => {
             <small>{updateDate} {updateTime}</small>
           </div>
           {updateContent}
+          {updateMsg}
         </div>
-        {updateMsg}
       </div>
     </div>
   );

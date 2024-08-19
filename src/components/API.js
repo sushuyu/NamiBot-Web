@@ -40,8 +40,7 @@ const API = () => {
 
   return (
     <div>
-      <h1>Clash Status</h1>
-      <pre>{JSON.stringify(status, null, 2)}</pre>
+      <pre>{JSON.stringify(status, null, 2, 'hello')}</pre>
     </div>
   );
 };

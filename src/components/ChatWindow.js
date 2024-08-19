@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ChatInput from './ChatInput';
 import ChatOutput from './ChatOutput';
-import formatAPI from '../utils/FormatAPI';
+import formatAPI from '../utils/FormatMaintUpdate';
+import formatClash from '../utils/FormatClash';
 import '../styles/ChatWindow.css';
 
 const ChatWindow = () => {
@@ -79,7 +80,15 @@ const ChatWindow = () => {
       }
 
       const data = await response.json();
-      const formattedResponse = formatAPI(data);
+      let formattedResponse = "";
+
+      if (type === 'clash') {
+        formattedResponse = formatClash(data);
+      } else if (type === 'status') {
+        formattedResponse = formatAPI(data);
+      } else {
+        throw new Error('Unknown command type')
+      }
 
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -116,6 +125,7 @@ const ChatWindow = () => {
         </h4>
 
         <small><i>all regions: NA, EUW, EUNE, OCE</i></small>
+        <small><i><code style={{ fontSize: '0.9rem' }}>!statusdebug</code> and <code style={{ fontSize: '0.9rem' }}>!clashdebug</code> will simulate real API responses if there are none</i></small>
 
         <div className='flex w-100 mt-5'>
           <ChatOutput messages={messages} />
