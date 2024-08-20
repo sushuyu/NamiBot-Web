@@ -20,7 +20,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <a href='https://github.com/MiaaaV/NamiBot-Web' target='_blank' rel='noreferrer'><FaGithub />
+          <a href='https://github.com/sushuyu/NamiBot-Web' target='_blank' rel='noreferrer'><FaGithub />
           </a>
         </li>
         <li>
