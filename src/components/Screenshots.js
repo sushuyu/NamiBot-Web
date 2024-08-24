@@ -21,7 +21,7 @@ const Screenshots = () => {
     <div className='d-flex flex-column justify-content-center align-items-center'>
       <NavBar />
 
-      <div id='screenshots' className='pb-4 shadow-sm'>
+      <div id='screenshots' className='pb-4 card shadow-sm'>
         <div className='d-flex justify-content-between align-items-center mt-3'>
           <h5>{view === 'original' ? "Discord outputs" : "Web outputs"}</h5>
 

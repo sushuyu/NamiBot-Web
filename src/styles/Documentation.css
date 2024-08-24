@@ -1,5 +1,11 @@
-#documentation {
-  gap: 1rem;
+#documentation > div {
+  overflow-y: auto;
+  height: 70vh;
+  padding: 0.5rem;
+}
+
+#documentation section {
+  padding: 0.5rem;
 }
 
 .features {
@@ -23,4 +29,22 @@ li code {
 
 #api-link {
   text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #region-api {
+    margin-top: 1rem;
+    flex-direction: row !important;
+    gap: 0.5rem;
+  }
+
+  #regions {
+    justify-content: space-between !important;
+  }
+
+  #documentation > div {
+    height: 100%;
+    padding: 1rem;
+  }
+
 }

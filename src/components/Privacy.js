@@ -4,7 +4,7 @@ import NavBar from './Nav';
 
 const Privacy = () => {
   return (
-    <div className='w-50'>
+    <div className='d-flex flex-column justify-content-center align-items-center'>
       <NavBar />
 
       <div id="privacy-policy" className="card shadow-sm">
