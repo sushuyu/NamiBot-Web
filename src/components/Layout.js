@@ -5,13 +5,13 @@ import bgVideo from '../media/vecteezy_blue-ocean-underwater-with-sun-shine-back
 
 const Layout = () => {
   return (
-    <div className="layout">
+    <div className="layout d-flex flex-column justify-content-center">
       <video id='video' src={bgVideo} autoPlay loop muted />
+      <a id='attribution' href="https://www.vecteezy.com/free-videos/underwater-animation" target='_blank'>
+        Underwater Animation Stock Videos by Vecteezy
+      </a>
       <div className="content">
         <Outlet />
-        <a id='attribution' href="https://www.vecteezy.com/free-videos/underwater-animation" target='_blank'>
-          Underwater Animation Stock Videos by Vecteezy
-        </a>
       </div>
 
       <div className='d-flex justify-content-center'>

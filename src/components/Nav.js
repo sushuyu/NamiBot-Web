@@ -7,10 +7,11 @@ import '../styles/Nav.css';
 
 const NavBar = () => {
   return (
-    <nav className='d-flex justify-content-between align-items-center'>
-      <NavLink to="/" style={{ textDecoration: 'none' }}><h2>Nami Bot</h2></NavLink>
+    <nav className='d-flex align-items-center'>
+      <NavLink to="/" style={{ textDecoration: 'none' }}
+        className='d-flex'><h2>Nami Bot</h2><small>demo</small></NavLink>
 
-      <ul className="nav mb-2 ">
+      <ul className="nav">
         <li>
           <NavLink to="/screenshots"><FaImages />
           </NavLink>

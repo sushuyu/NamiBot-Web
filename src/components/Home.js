@@ -4,8 +4,8 @@ import ChatWindow from '../components/ChatWindow';
 
 const Home = () => {
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
-      <div>
+    <div className="d-flex justify-content-center vh-100">
+      <div className='d-flex flex-column justify-content-center align-items-center'>
         <NavBar />
         <ChatWindow />
       </div>

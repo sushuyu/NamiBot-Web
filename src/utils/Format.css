@@ -14,13 +14,17 @@ font-size: 0.8rem;
   background-color: rgba(28, 43, 58, 0.6) !important;
   border-radius: 3px;
   padding: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 #clash-info > div {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+#clash-info > div > div {
+  display: flex;
+  flex-direction: column;
 }
 
 #clash-info span {
@@ -37,7 +41,7 @@ font-size: 0.8rem;
 
 #server-status,
 #clash-status {
-  padding: 1rem;
+  padding: 0.2rem;
 }
 
 #server-status h5,
@@ -52,4 +56,24 @@ font-size: 0.8rem;
   background-color: rgba(28, 43, 58, 0.6) !important;
   padding: 0.5rem 0.5rem 0.2rem 0.5rem;
   border-radius: 3px;
+}
+
+/* QUERIES */
+
+@media only screen and (min-width: 600px) {
+
+  #server-status,
+  #clash-status {
+    padding: 0.5rem;
+  }
+
+  #clash-info > div > div {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  #clash-info span {
+    margin-left: 10px;
+  }
+
 }

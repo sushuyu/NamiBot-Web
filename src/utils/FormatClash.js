@@ -57,23 +57,27 @@ const formatClash = (data) => {
     const formattedNameKey = capitalizeFirstLetter(nameKey);
     const formattedNameKeySecondary = formatDayString(nameKeySecondary);
 
+    const firstItemStyle = index === 0 ? { marginBottom: '1rem' } : {};
+
     return (
-      <div key={index}>
+      <div key={index} style={firstItemStyle}>
         <div id='clash-info'>
           <h5>Next Clash: {formattedNameKey} Cup - {formattedNameKeySecondary}</h5>
-          <div>
-            <div>
-              Registration begins on <span>{formattedRegTime}</span>
+          {cancelled ? (
+            <div id='cancelled'>
+              This Clash has been cancelled
             </div>
+          ) : (
             <div>
-              {formattedNameKeySecondary} starts on <span>{formattedStartTime}</span>
-            </div>
-            {cancelled && (
-              <div id='cancelled'>
-                This Clash has been cancelled
+              <div>
+                Registration begins on
+                <span>{formattedRegTime}</span>
               </div>
-            )}
-          </div>
+              <div>
+                {formattedNameKeySecondary} starts on <span>{formattedStartTime}</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );

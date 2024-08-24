@@ -18,32 +18,35 @@ const Screenshots = () => {
   const layoutClass = view === 'original' ? 'original-layout' : 'new-images';
 
   return (
-    <div>
+    <div className='d-flex flex-column justify-content-center align-items-center'>
       <NavBar />
 
-      <div className='card shadow-sm'>
-        <h5>{view === 'original' ? "Nami Bot's Discord outputs" : "Nami Bot's web outputs"}</h5>
-        <div className={layoutClass}>
+      <div id='screenshots' className='pb-4 shadow-sm'>
+        <div className='d-flex justify-content-between align-items-center mt-3'>
+          <h5>{view === 'original' ? "Discord outputs" : "Web outputs"}</h5>
+
+          <div className='arrow-buttons'>
+            {view === 'original' ? (
+              <button onClick={() => setView('new')} className='d-flex align-items-center'>
+                Web Outputs &nbsp;<FaArrowRight id='Fa-arr' />
+              </button>
+            ) : (
+              <button onClick={() => setView('original')} className='d-flex align-items-center'>
+                <FaArrowLeft id='Fa-arr' />&nbsp; Discord outputs
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div id='ss-layout' className={`${layoutClass} mt-4`}>
           {images.map((img, index) => (
-            <div key={index}>
+            <div key={index} className='d-flex justify-content-center'>
               <img id='ss-img' src={img} alt={`Screenshot ${index + 1}`} />
             </div>
           ))}
         </div>
-
-        <div className='arrow-buttons'>
-          {view === 'original' ? (
-            <button onClick={() => setView('new')} className='d-flex align-items-center'>
-              Web Outputs &nbsp;<FaArrowRight id='Fa-arr' />
-            </button>
-          ) : (
-            <button onClick={() => setView('original')} className='d-flex align-items-center'>
-              <FaArrowLeft id='Fa-arr' />&nbsp; Discord outputs
-            </button>
-          )}
-        </div>
       </div>
-    </div>
+    </div >
   );
 };
 

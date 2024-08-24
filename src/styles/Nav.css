@@ -1,9 +1,19 @@
+nav {
+  flex-direction: column;
+}
+
+nav small {
+  color: rgb(177, 197, 0);
+}
+
 nav h2 {
   color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
 }
 
 .nav {
   gap: 1rem;
+  margin-bottom: 1.5rem !important;
 }
 
 svg {
@@ -15,4 +25,21 @@ svg {
 
 svg:hover {
   color: white;
+}
+
+/* QUERIES */
+
+@media only screen and (min-width: 375px) {
+
+  nav {
+    flex-direction: row;
+    justify-content: space-between !important;
+    width: 95%;
+  }
+
+  nav h2,
+  .nav {
+    margin-bottom: 0.5rem !important;
+  }
+
 }
