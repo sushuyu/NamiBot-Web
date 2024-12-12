@@ -28,7 +28,3 @@ const ChatOutput = ({ messages }) => {
 };
 
 export default ChatOutput;
-
-/*
-flex-grow-1 overflow-auto mb-3
-*/

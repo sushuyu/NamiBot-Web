@@ -13,7 +13,7 @@ const Documentation = () => {
           <section>
             <h4>How to use</h4>
             <p>
-              Simply type the command with <code>!</code> as the prefix in the chat followed by the region, and Nami Bot will fetch the current available information according to the API.
+              Simply type the slash command <code>/clash</code> or <code>/status</code> in the chat followed by the region, and Nami Bot will fetch the current available information according to the API.
             </p>
           </section>
 
@@ -22,14 +22,14 @@ const Documentation = () => {
             <p>Nami Bot uses two main commands which are case-insensitive:</p>
             <ul>
               <li>
-                <strong>!clash &lt;region&gt;</strong><br />
+                <strong>/clash &lt;region&gt;</strong><br />
                 Gets the latest Clash tournament schedules for the specified region.<br />
-                Example: <code>!clashna</code>, <code>!clashNa</code> or <code>!clashNA</code> gives the information available in the API for the NA region.
+                Example: <code>/clash na</code>, <code>/clash Na</code> or <code>/clash NA</code> gives the information available in the API for the NA region.
               </li>
               <li>
-                <strong>!status &lt;region&gt;</strong><br />
+                <strong>/status &lt;region&gt;</strong><br />
                 Allows the user to check the current server status for the specified region.<br />
-                Example: <code>!statuseuw</code>, <code>!statusEuw</code> or <code>!statusEUW</code> gives the information available in the API for the EUW region.
+                Example: <code>/status euw</code>, <code>/status Euw</code> or <code>/status EUW</code> gives the information available in the API for the EUW region.
               </li>
             </ul>
           </section>
@@ -49,7 +49,7 @@ const Documentation = () => {
 
             <div className='apis'>
               <h4>APIs</h4>
-              <p>Nami Bot uses the RIOT APIs for fetching data.</p>
+              <p>Nami Bot uses two RIOT APIs for fetching data.</p>
               <div className='mb-2'>
                 <strong>CLASH-V1</strong><br />
                 <a id='api-link' href='https://developer.riotgames.com/apis#clash-v1/GET_getTournaments' target='_blank' rel='noopener noreferrer'>

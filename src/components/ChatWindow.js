@@ -12,8 +12,11 @@ const ChatWindow = () => {
 
   const parseCommand = (command) => {
     let text = command.toLowerCase().trim();
-    if (text.startsWith('!')) {
-      text = text.substring(1);
+
+    if (text.startsWith('/')) {
+      text = text.substring(1); // remove the '/'
+    } else {
+      throw new Error('Invalid command');
     }
 
     let region = '';
@@ -113,20 +116,20 @@ const ChatWindow = () => {
     <div className="card shadow-sm">
       <div className="card-body align-items-center d-flex flex-column">
         <h4>Try inputting&nbsp;
-          <button id="code-btn-1" onClick={() => handleButtonClick('!statusNA')}>
-            <code>!statusNA</code>
+          <button id="code-btn-1" onClick={() => handleButtonClick('/status NA')}>
+            <code>/status <span style={{ color: 'yellow' }}>NA</span></code>
           </button>
 
           &nbsp;or&nbsp;
 
-          <button id="code-btn-2" onClick={() => handleButtonClick('!clashEUW')}>
-            <code>!clashEUW</code>
+          <button id="code-btn-2" onClick={() => handleButtonClick('/clash EUW')}>
+            <code>/clash <span style={{ color: 'yellow' }}>EUW</span></code>
           </button>
         </h4>
 
-        <small><i><code style={{ fontSize: '0.9rem' }}>!statusdebug</code> and <code style={{ fontSize: '0.9rem' }}>!clashdebug</code> will simulate real API responses</i></small>
+        <small><i><code style={{ fontSize: '0.9rem' }}>/statusdebug</code> and <code style={{ fontSize: '0.9rem' }}>/clashdebug</code> will simulate real API responses</i></small>
 
-        <div className='d-flex flex-column mt-5 chat-output w-100'>
+        <div className='d-flex flex-column chat-output w-100'>
           <ChatOutput messages={messages} />
           <ChatInput onSend={handleSendMessage} />
         </div>

@@ -1,0 +1,32 @@
+.suggestions {
+  position: relative;
+  bottom: 0%;
+  width: 100%;
+  background-color: #3a6470;
+  border-radius: 5px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-bottom: 0.3rem;
+}
+
+.suggestion-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #ffffffc7;
+  font-size: 0.9rem;
+}
+
+.suggestion-item:hover {
+  background-color: rgba(103, 153, 167, 0.3);
+}
+
+.suggestion-item.selected {
+  background-color: #f0f0f0;
+}
+
+
+#send-btn {
+  background-color: rgba(15, 17, 31, 0.6);
+  color: white;
+  padding: 0.6rem 1.2rem;
+}

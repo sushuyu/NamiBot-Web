@@ -10,8 +10,7 @@ const formatDayString = (dayString) => {
   if (!dayString) return '';
   const parts = dayString.split('_');
   if (parts.length === 2) {
-    const dayNumber = parts[1];
-    return `Day ${dayNumber}`;
+    return `Day ${parts[1]}`;
   }
   return dayString;
 };
@@ -20,10 +19,7 @@ const formatDayString = (dayString) => {
 const extractDayNumber = (dayString) => {
   if (!dayString) return Infinity;
   const parts = dayString.split('_');
-  if (parts.length === 2 && !isNaN(parts[1])) {
-    return parseInt(parts[1], 10);
-  }
-  return Infinity;
+  return parts.length === 2 && !isNaN(parts[1]) ? parseInt(parts[1], 10) : Infinity;
 };
 
 const formatDateTime = (dateString) => {
@@ -36,11 +32,11 @@ const formatDateTime = (dateString) => {
 
 const formatClash = (data) => {
   if (!data || !Array.isArray(data) || data.length === 0) {
-    return 'Invalid response from server (clash)';
+    return <div id="clash-status">No Clash tournaments found for the region at this time</div>;
   }
 
   // sort data based on the day number
-  const sortedData = data.sort((a, b) => {
+  const sortedData = [...data].sort((a, b) => {
     const dayNumberA = extractDayNumber(a.nameKeySecondary);
     const dayNumberB = extractDayNumber(b.nameKeySecondary);
     return dayNumberA - dayNumberB;
@@ -48,8 +44,7 @@ const formatClash = (data) => {
 
   let clashItems = sortedData.map((event, index) => {
     const { nameKey, nameKeySecondary, schedule } = event;
-    const firstSchedule = schedule[0] || {};
-    const { registrationTime, startTime, cancelled } = firstSchedule;
+    const { registrationTime = '', startTime = '', cancelled = false } = schedule[0] || {};
 
     const formattedRegTime = formatDateTime(registrationTime);
     const formattedStartTime = formatDateTime(startTime);
@@ -57,12 +52,12 @@ const formatClash = (data) => {
     const formattedNameKey = capitalizeFirstLetter(nameKey);
     const formattedNameKeySecondary = formatDayString(nameKeySecondary);
 
-    const firstItemStyle = index === 0 ? { marginBottom: '1rem' } : {};
-
     return (
-      <div key={index} style={firstItemStyle}>
+      <div key={event.id} className={`clash-item ${index === 0 ? 'clash-item-first' : ''}`}>
         <div id='clash-info'>
-          <h5>Next Clash: {formattedNameKey} Cup - {formattedNameKeySecondary}</h5>
+          <h5>
+            {index === 0 ? 'Next Clash' : 'Upcoming Clash'}: {formattedNameKey} Cup - {formattedNameKeySecondary}
+          </h5>
           {cancelled ? (
             <div id='cancelled'>
               This Clash has been cancelled
