@@ -18,11 +18,11 @@ Server Status Checks: Check the current server status for a specific region usin
 ## Usage
 ### Commands
 
-!clash <region>: Retrieves the latest Clash tournament schedules.
-    Example: !clashNA or !clashEUW
+/clash <region>: Retrieves the latest Clash tournament schedules.
+    Example: /clashNA or /clashEUW
 
-!status <region>: Checks the current server status.
-    Example: !statusNA or !statusEUW
+/status <region>: Checks the current server status.
+    Example: /statusNA or /statusEUW
 
 ## Project Structure
 
