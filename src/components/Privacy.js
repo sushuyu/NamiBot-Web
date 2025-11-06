@@ -32,7 +32,7 @@ const Privacy = () => {
 
         <section>
           <h5>Contact</h5>
-          <p>For any questions about this privacy policy, please contact <span>suushi_</span> on Discord.</p>
+          <p>For any questions about this privacy policy, please contact <span>sushiu</span> on Discord.</p>
         </section>
       </div>
     </div>
