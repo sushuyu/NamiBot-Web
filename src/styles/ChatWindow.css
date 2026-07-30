@@ -2,7 +2,7 @@
   background-color: #0c293193 !important;
   color: white !important;
   max-width: 95%;
-  max-height: 70%;
+  max-height: min(72dvh, 720px);
 }
 
 .card-body {
@@ -49,7 +49,7 @@ code {
   flex: 1;
   padding-top: 10px;
   overflow-y: auto;
-  height: 800px !important;
+  height: clamp(16rem, 42dvh, 32rem) !important;
 }
 
 /* MEDIA QUERIES */

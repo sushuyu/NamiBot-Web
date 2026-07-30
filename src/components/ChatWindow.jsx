@@ -5,6 +5,8 @@ import formatAPI from '../utils/FormatMaintUpdate';
 import formatClash from '../utils/FormatClash';
 import '../styles/ChatWindow.css';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://nami-api.truffel.dev/api/request/';
+
 const ChatWindow = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -67,7 +69,7 @@ const ChatWindow = () => {
         throw new Error('Invalid region');
       }
 
-      const response = await fetch('https://nami-api.truffel.dev/api/request/', {
+      const response = await fetch("https://nami-api.truffel.dev/api/request/", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -128,6 +130,8 @@ const ChatWindow = () => {
         </h4>
 
         <small><i><code style={{ fontSize: '0.9rem' }}>/statusdebug</code> and <code style={{ fontSize: '0.9rem' }}>/clashdebug</code> will simulate real API responses</i></small>
+
+        {loading && <small className="chat-status">Nami Bot is thinking...</small>}
 
         <div className='d-flex flex-column chat-output w-100'>
           <ChatOutput messages={messages} />

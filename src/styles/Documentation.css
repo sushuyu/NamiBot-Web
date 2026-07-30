@@ -1,6 +1,6 @@
 #documentation > div {
   overflow-y: auto;
-  height: 70vh;
+  height: min(70dvh, 720px);
   padding: 0.5rem;
 }
 

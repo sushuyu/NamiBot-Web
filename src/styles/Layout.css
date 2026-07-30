@@ -1,7 +1,7 @@
 .layout {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 #video {
@@ -20,6 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: calc(100dvh - 2.5rem);
 }
 
 #small {
