@@ -28,7 +28,7 @@ const Layout = () => {
     <div className="layout d-flex flex-column justify-content-center">
       <video id='video' ref={videoRef} src={bgVideo} autoPlay loop muted />
       <a id='attribution' href="https://www.vecteezy.com/free-videos/underwater-animation" target='_blank' rel='noopener noreferrer'>
-        Underwater Animation Stock Videos by Vecteezy
+        Underwater Animation Stock Videos by Vecteezy.
       </a>
       <div className="content">
         <Outlet />
