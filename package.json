@@ -3,6 +3,7 @@
   "name": "nami-bot",
   "version": "0.1.0",
   "private": true,
+   "type": "module",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
