@@ -17,8 +17,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "start": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "browserslist": [">0.2%", "not dead", "not op_mini all"]
